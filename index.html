@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dice roller</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>dice roller</h1>
-
-    <label for="diceType">roll a d</label>
-    <input id="diceType" type="text" name="diceType">
-    <p id="flag"></p>
+    <label for="input"><h2>select dice</h2></label>
+    <select name="diceType" id="input">
+        <option value="">roll one</option>
+        <option value="4">d4</option>
+        <option value="8">d8</option>
+        <option value="10">d10</option>
+        <option value="12">d12</option>
+        <option value="20">d20</option>
+        <option value="100">d100</option>
+    </select>
+    <button id="button">Roll</button>
     <p id="log"></p>  
-
     <script src="script.js"></script>
 </body>
 </html>

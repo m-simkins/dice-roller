@@ -1,5 +1,5 @@
-const input = document.querySelector("#diceType");
-const flag = document.querySelector("#flag");
+const input = document.querySelector("#input");
+const button = document.querySelector("#button");
 const log = document.querySelector("#log");
 
 function rollDice(diceType) {
@@ -10,9 +10,8 @@ function rollDice(diceType) {
     return result;
 }
 
-input.addEventListener("change", () => {
+button.addEventListener("click", () => {
     const diceType = parseFloat(input.value);
-    flag.textContent = `you rolled a d${diceType}`
     const result = rollDice(diceType);
     log.textContent = `your result is ${result}`
 });
