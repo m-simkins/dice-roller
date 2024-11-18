@@ -1,6 +1,7 @@
-const input = document.querySelector("#input");
-const button = document.querySelector("#button");
-const log = document.querySelector("#log");
+const diceTypeSelect = document.querySelector("#diceTypeSelect");
+const rollDiceButton = document.querySelector("#rollDiceButton");
+const resultLog = document.querySelector("#resultLog");
+let doubleRollCheck = document.querySelector("#doubleRollCheck");
 
 function rollDice(diceType) {
     let result = Math.floor(Math.random() * diceType);
@@ -10,8 +11,19 @@ function rollDice(diceType) {
     return result;
 }
 
-button.addEventListener("click", () => {
-    const diceType = parseFloat(input.value);
-    const result = rollDice(diceType);
-    log.textContent = `your result is ${result}`
+rollDiceButton.addEventListener("click", () => {
+    const diceType = parseFloat(diceTypeSelect.value);
+    let result;
+    if (doubleRollCheck.checked) {
+        let a = rollDice(diceType);
+        let b = rollDice(diceType);
+        if (a >= b) {
+            result = a;
+        } else {
+            result = b;
+        }
+    } else {
+        result = rollDice(diceType);
+    }
+    resultLog.textContent = `your result is ${result}`;
 });
