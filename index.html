@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dice roller</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>dice roller</h1>
-    <label for="diceTypeSelect"><h2>select dice</h2></label>
+
+    <h2>general roller</h2>
+
+    <label for="diceTypeSelect"><h3>select dice</h3></label>
     <select name="diceType" id="diceTypeSelect">
         <option value="">roll one</option>
         <option value="4">d4</option>
@@ -17,10 +21,13 @@
         <option value="20">d20</option>
         <option value="100">d100</option>
     </select>
-    <label for="diceCountInput">how many?</label>
+
+    <label for="diceCountInput"><h3>how many?</h3></label>
     <input id="diceCountInput" type="number" name="diceCount">
+        
     <button id="rollButton">Roll</button>
-    <p id="resultLog"></p>
+    
+    <p id="resultLog">your result here</p>
     
     <script src="script.js"></script>
 
