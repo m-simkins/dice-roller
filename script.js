@@ -1,19 +1,18 @@
-const button = document.querySelector("button");
+const input = document.querySelector("#diceType");
 const flag = document.querySelector("#flag");
 const log = document.querySelector("#log");
 
-function logResult(result) {
-    flag.textContent = `you roll ${result}.`
-    log.textContent += `${result}, `;
-}
-
-function rollDice() {
-    let result = Math.floor(Math.random() * 20);
+function rollDice(diceType) {
+    let result = Math.floor(Math.random() * diceType);
     if (result === 0) {
-        result = 20;
+        result = diceType;
     }
-    logResult(result);
+    return result;
 }
 
-button.addEventListener("click", rollDice);
-
+input.addEventListener("change", () => {
+    const diceType = parseFloat(input.value);
+    flag.textContent = `you rolled a d${diceType}`
+    const result = rollDice(diceType);
+    log.textContent = `your result is ${result}`
+});
