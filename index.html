@@ -7,8 +7,8 @@
 </head>
 <body>
     <h1>dice roller</h1>
-    <label for="input"><h2>select dice</h2></label>
-    <select name="diceType" id="input">
+    <label for="diceTypeSelect"><h2>select dice</h2></label>
+    <select name="diceType" id="diceTypeSelect">
         <option value="">roll one</option>
         <option value="4">d4</option>
         <option value="8">d8</option>
@@ -17,9 +17,9 @@
         <option value="20">d20</option>
         <option value="100">d100</option>
     </select>
-    <label for="doubleRollCheck">roll twice?</label>
-    <input type="checkbox" name="doubleRollCheck" id="doubleRollCheck">
-    <button id="rollDiceButton">Roll</button>
+    <label for="diceCountInput">how many?</label>
+    <input id="diceCountInput" type="number" name="diceCount">
+    <button id="rollButton">Roll</button>
     <p id="resultLog"></p>
     
     <script src="script.js"></script>
