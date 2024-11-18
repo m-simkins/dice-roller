@@ -1,9 +1,11 @@
 const diceTypeSelect = document.querySelector("#diceTypeSelect");
 const rollButton = document.querySelector("#rollButton");
 const resultLog = document.querySelector("#resultLog");
-let diceCountInput = document.querySelector("#diceCountInput");
+const diceCountInput = document.querySelector("#diceCountInput");
+const advantage = document.querySelector("#advantage");
+const disadvantage = document.querySelector("#disadvantage");
 
-function rollDice(diceType) {
+function rollOne(diceType) {
     let result = Math.floor(Math.random() * diceType);
     if (result === 0) {
         result = diceType;
@@ -19,15 +21,23 @@ function rollAll(diceType, diceCount) {
     return resultArray;
 }
 
-rollDiceButton.addEventListener("click", () => {
+function showResult(result) {
+    if (Array.isArray(result)) {
+        let display = result.join(", ");
+        resultLog.textContent = `result: ${display}`;
+    } else {
+        resultLog.textContent = `result: ${result}`;
+    }
+}
+
+rollButton.addEventListener("click", () => {
     const diceType = parseFloat(diceTypeSelect.value);
     const diceCount = parseFloat(diceCountInput.value);
     if (diceCount === 1) {
         let result = rollOne(diceType);
-        resultLog.textContent = `you rolled a ${result}`;
+        showResult(result);
     } else {
         let result = rollAll(diceType, diceCount);
-        let resultDisplay = result.join(", ")
-        resultLog.textContent = `you rolled ${resultDisplay}`;
+        showResult(result);
     }
 });

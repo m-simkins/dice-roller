@@ -9,9 +9,7 @@
 <body>
     <h1>dice roller</h1>
 
-    <h2>general roller</h2>
-
-    <label for="diceTypeSelect"><h3>select dice</h3></label>
+    <label for="diceTypeSelect"><h2>roll</h2></label>
     <select name="diceType" id="diceTypeSelect">
         <option value="">roll one</option>
         <option value="4">d4</option>
@@ -22,11 +20,14 @@
         <option value="100">d100</option>
     </select>
 
-    <label for="diceCountInput"><h3>how many?</h3></label>
+    <label for="diceCountInput"><h2>how many?</h2></label>
     <input id="diceCountInput" type="number" name="diceCount">
         
-    <button id="rollButton">Roll</button>
-    
+    <button id="rollButton">roll</button>
+
+    <button id="advantage">roll d20 with advantage</button>
+    <button id="disadvantage">roll d20 with disadvantage</button>
+
     <p id="resultLog">your result here</p>
     
     <script src="script.js"></script>
