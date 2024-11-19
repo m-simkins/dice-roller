@@ -8,25 +8,29 @@
 </head>
 <body>
     <h1>dice roller</h1>
-
-    <label for="diceTypeSelect"><h2>roll</h2></label>
-    <select name="diceType" id="diceTypeSelect">
-        <option value="">choose</option>
-        <option value="4">d4</option>
-        <option value="8">d8</option>
-        <option value="10">d10</option>
-        <option value="12">d12</option>
-        <option value="20">d20</option>
-        <option value="100">d100</option>
-    </select>
-
-    <label for="diceCountInput"><h2>how many?</h2></label>
-    <input id="diceCountInput" type="number" name="diceCount">
-        
-    <button id="rollButton">roll</button>
-
-    <button id="advantage">roll d20 with advantage</button>
-    <button id="disadvantage">roll d20 with disadvantage</button>
+    <section id="freeRollSection">
+        <div id="freeRollInput">
+            <label for="diceTypeSelect">type
+                <select name="diceType" id="diceTypeSelect">
+                    <option value="">choose</option>
+                    <option value="4">d4</option>
+                    <option value="8">d8</option>
+                    <option value="10">d10</option>
+                    <option value="12">d12</option>
+                    <option value="20">d20</option>
+                    <option value="100">d100</option>
+                </select>
+            </label>
+            <label for="diceCountInput">count
+                <input id="diceCountInput" type="number" name="diceCount">
+            </label>
+        </div>
+        <button id="rollButton">roll</button>
+    </section>
+    <section id="skillSection">
+        <button id="advantage">roll d20 with advantage</button>
+        <button id="disadvantage">roll d20 with disadvantage</button>
+    </section>
 
     <p id="resultLog">your result here</p>
     

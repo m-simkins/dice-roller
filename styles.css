@@ -14,6 +14,40 @@ body {
     color: var(--text-light);
 }
 
+h1, #resultLog {
+    background-color: #000;
+    padding: 0.25rem;
+    text-align: center;
+}
+
+section {
+    margin: 0.25rem;
+    border: 1px solid var(--text-light);
+}
+
+#freeRollInput {
+    display: flex;
+    justify-content: space-around;
+}
+
+#rollButton {
+    width: 100%;
+}
+
+#skillSection {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#skillSection button {
+    width: 100%;
+}
+
+select, input, button {
+    background-color: var(--text-light);
+    color: var(--bg-dark);
+}
+
 #rollButton {
     display: block;
 }
