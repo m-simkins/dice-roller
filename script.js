@@ -22,22 +22,37 @@ function rollAll(diceType, diceCount) {
 }
 
 function showResult(result) {
-    if (Array.isArray(result)) {
-        let display = result.join(", ");
-        resultLog.textContent = `result: ${display}`;
-    } else {
-        resultLog.textContent = `result: ${result}`;
-    }
+    resultLog.textContent = `result: ${result}`;
 }
 
 rollButton.addEventListener("click", () => {
-    const diceType = parseFloat(diceTypeSelect.value);
-    const diceCount = parseFloat(diceCountInput.value);
+    const diceType = parseInt(diceTypeSelect.value);
+    const diceCount = parseInt(diceCountInput.value);
     if (diceCount === 1) {
-        let result = rollOne(diceType);
+        showResult(rollOne(diceType));
+    } else {
+        showResult(rollAll(diceType, diceCount).join(", "));
+    }
+});
+
+advantage.addEventListener("click", () => {
+    let result = rollAll(20, 2);
+    if (result[0] > result[1]) {
+        result = result[0];
         showResult(result);
     } else {
-        let result = rollAll(diceType, diceCount);
+        result = result[1];
+        showResult(result);
+    }
+});
+
+disadvantage.addEventListener("click", () => {
+    let result = rollAll(20, 2);
+    if (result[1] > result[0]) {
+        result = result[0];
+        showResult(result);
+    } else {
+        result = result[1];
         showResult(result);
     }
 });
