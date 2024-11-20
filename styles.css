@@ -20,6 +20,10 @@ h1, #resultLog {
     text-align: center;
 }
 
+h2 {
+    text-align: center;
+}
+
 section {
     margin: 0.25rem;
     border: 1px solid var(--text-light);
@@ -30,13 +34,17 @@ section {
     justify-content: space-around;
 }
 
-#rollButton {
+#freeRollButton {
     width: 100%;
 }
 
-#skillSection {
+#skillSectionInput {
     display: flex;
     justify-content: space-evenly;
+}
+
+#skillSection h2 {
+    display: block;
 }
 
 #skillSection button {

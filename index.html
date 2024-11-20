@@ -9,6 +9,7 @@
 <body>
     <h1>dice roller</h1>
     <section id="freeRollSection">
+        <h2>free roll</h2>
         <div id="freeRollInput">
             <label for="diceTypeSelect">type
                 <select name="diceType" id="diceTypeSelect">
@@ -25,13 +26,19 @@
                 <input id="diceCountInput" type="number" name="diceCount">
             </label>
         </div>
-        <button id="rollButton">roll</button>
+        <button id="freeRollButton">roll</button>
     </section>
     <section id="skillSection">
-        <button id="advantage">roll d20 with advantage</button>
-        <button id="disadvantage">roll d20 with disadvantage</button>
+        <h2>skill checks</h2>
+        <div id="skillSectionInput">
+            <button id="advantage">roll d20 with advantage</button>
+            <button id="disadvantage">roll d20 with disadvantage</button>
+        </div>
     </section>
-
+    <section id="statsSection">
+        <h2>stat roller</h2>
+        <button id="statRollButton">roll stats</button>
+    </section>
     <p id="resultLog">your result here</p>
     
     <script src="script.js"></script>
